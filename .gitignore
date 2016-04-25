@@ -3,3 +3,11 @@ Thumbs.db
 
 #Pycharm
 .idea
+
+#Python
+*.pyc
+
+#Project
+in
+out
+chart

@@ -44,14 +44,19 @@ def calc_lbp(filename, mode='none'):
 
 
 def lbp_mode(lbp_val, mode='none'):
-    lbp_rot = {255: 255,
-               127: 127, 191: 127, 233: 127, 239: 127, 247: 127, 251: 127, 254: 127, 253: 127,
-               63: 63, 126: 63, 252: 63, 243: 63, 249: 63, 231: 63, 207: 63, 159: 63,
-               31: 31, 62: 31, 124: 31, 248: 31, 241: 31, 227: 31, 199: 31, 143: 31,
-               15: 15, 30: 15, 60: 15, 120: 15, 240: 15, 225: 15, 195: 15, 135: 15,
-               7: 7, 14: 7, 28: 7, 56: 7, 112: 7, 224: 7, 193: 7, 131: 7}
-    uniform = {}
-    return {'none': lbp_val, 'lbprot': lbp_rot[lbp_val, 'uniform': uniform[lbp_val]]}[mode]
+    if mode == 'none':
+        return lbp_val
+    if mode == 'lbprot':
+        lbp_rot = {255: 255,
+                   127: 127, 191: 127, 233: 127, 239: 127, 247: 127, 251: 127, 254: 127, 253: 127,
+                   63: 63, 126: 63, 252: 63, 243: 63, 249: 63, 231: 63, 207: 63, 159: 63,
+                   31: 31, 62: 31, 124: 31, 248: 31, 241: 31, 227: 31, 199: 31, 143: 31,
+                   15: 15, 30: 15, 60: 15, 120: 15, 240: 15, 225: 15, 195: 15, 135: 15,
+                   7: 7, 14: 7, 28: 7, 56: 7, 112: 7, 224: 7, 193: 7, 131: 7}
+        return lbp_rot[lbp_val]
+    if mode == 'uniform':
+        uniform = {}
+        return uniform[lbp_val]
 
 
 def lbp_chart(cell, mode='none'):
@@ -69,7 +74,7 @@ def lbp_chart(cell, mode='none'):
         return chart
 
 
-def save_chart(chart, filename):
+def save_lbp_chart(chart, filename):
     chart = chart[1:256]  # except chart[0]
     x = numpy.arange(len(chart))
     fig_h = plt.subplot(111)
@@ -86,9 +91,11 @@ def save_lbp_mat(lbp_mat, filename):
 def test():
     start = time.clock()
     fn = 'test.jpg'
-    lbp_matrix = calc_lbp('./in/' + fn)
-    save_lbp_mat(lbp_matrix, './out/' + fn)
-    save_chart(lbp_chart(lbp_matrix), './chart/' + fn)
+    lbp_matrix = calc_lbp('./in/' + fn, mode='none')
+    save_lbp_mat(lbp_matrix, './out/lbp/' + fn)
+    save_lbp_chart(lbp_chart(lbp_matrix), './chart/lbp/' + fn)
     end = time.clock()
     print('Running time: %s Seconds' % (end - start))
 
+
+# test()

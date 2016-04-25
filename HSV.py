@@ -31,14 +31,16 @@ def hsv_color(img):
         b.putdata(v_dat)
         return Image.merge('RGB', (r, g, b)), h_arr, s_arr, v_arr
 
-im = Image.open('./in/5.jpg')
-hsv_im, h_data, s_data, v_data = hsv_color(im)
-x = numpy.arange(len(h_data))
-fig_h = plt.subplot(131)
-fig_s = plt.subplot(132)
-fig_v = plt.subplot(133)
-fig_h.bar(x, h_data, alpha=.5, color='r')
-fig_s.bar(x, s_data, alpha=.5, color='g')
-fig_v.bar(x, v_data, alpha=.5, color='b')
-plt.show()
-hsv_im.save('./out/5.jpg')
+
+def test():
+    im = Image.open('./in/5.jpg')
+    hsv_im, h_data, s_data, v_data = hsv_color(im)
+    x = numpy.arange(len(h_data))
+    fig_h = plt.subplot(131)
+    fig_s = plt.subplot(132)
+    fig_v = plt.subplot(133)
+    fig_h.bar(x, h_data, alpha=.5, color='r')
+    fig_s.bar(x, s_data, alpha=.5, color='g')
+    fig_v.bar(x, v_data, alpha=.5, color='b')
+    plt.show()
+    hsv_im.save('./out/5.jpg')

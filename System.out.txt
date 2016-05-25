@@ -1,0 +1,42 @@
+
+#log start: 2016-05-22 20:37:09
+
+
+checking: 
+
+
+
+processing: ['20408.jpg', '20520.jpg', 'test.jpg', 'test1.jpg']
+
+
+C:\Users\Henry.Z\Desktop\PM2.5.TEST\in\20408.jpg--->C:\Users\Henry.Z\Desktop\PM2.5.TEST\out\20408.jpg.json
+
+C:\Users\Henry.Z\Desktop\PM2.5.TEST\in\20520.jpg--->C:\Users\Henry.Z\Desktop\PM2.5.TEST\out\20520.jpg.json
+
+C:\Users\Henry.Z\Desktop\PM2.5.TEST\in\test.jpg--->C:\Users\Henry.Z\Desktop\PM2.5.TEST\out\test.jpg.json
+
+C:\Users\Henry.Z\Desktop\PM2.5.TEST\in\test1.jpg--->C:\Users\Henry.Z\Desktop\PM2.5.TEST\out\test1.jpg.json
+
+
+Success! Totally 4 pictures 
+
+
+
+#log start: 2016-05-22 22:48:00
+
+
+checking: 
+
+
+20408.jpg processed
+20520.jpg processed
+test.jpg processed
+test1.jpg processed
+
+processing: []
+
+
+
+Success! Totally 0 pictures 
+
+

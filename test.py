@@ -1,5 +1,7 @@
 import HSV
-import LBP
+import LBP_MAT
+import LBPu
 
-HSV.test()
-LBP.test()
+# HSV.test()
+LBP_MAT.test_2()
+# LBPu.test()
